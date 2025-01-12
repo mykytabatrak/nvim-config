@@ -45,7 +45,7 @@ local function config()
   set_keymap("fk", builtin.keymaps, "[F]ind [K]eymaps")
   set_keymap("fw", builtin.live_grep, "[F]ind [W]ord")
   set_keymap("fW", builtin.grep_string, "[F]ind current [W]ord")
-  set_keymap("fd", builtin.diagnostics, "[F]ind [D]iagnostics")
+  set_keymap("fq", builtin.quickfix, "[F]ind [Q]uickfix")
 
   set_keymap("ffw", builtin.find_files, "[F]ind [F]iles in [W]orkspace")
   set_keymap("ffo", find_open_files, "[F]ind [F]iles [O]pen")
