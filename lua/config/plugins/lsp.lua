@@ -120,6 +120,7 @@ local function config()
   lspconfig.lua_ls.setup({ capabilities = capabilities })
   lspconfig.ts_ls.setup({ capabilities = capabilities })
   lspconfig.eslint.setup({ capabilities = capabilities })
+  lspconfig.typos_lsp.setup({ capabilities = capabilities })
 end
 
 return {
