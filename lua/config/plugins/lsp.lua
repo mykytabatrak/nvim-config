@@ -4,6 +4,12 @@ local function config()
     callback = function(event)
       local telescopeBuiltin = require("telescope.builtin")
 
+      local function current_buf_diagnostic()
+        telescopeBuiltin.diagnostics({
+          bufnr = 0,
+        })
+      end
+
       vim.keymap.set(
         "n",
         "grd",
@@ -36,15 +42,27 @@ local function config()
       )
       vim.keymap.set(
         "n",
-        "gO",
+        "go",
         telescopeBuiltin.lsp_document_symbols,
         { desc = "Go to document symbols" }
       )
       vim.keymap.set(
         "n",
-        "grO",
+        "gO",
         telescopeBuiltin.lsp_dynamic_workspace_symbols,
         { desc = "Go to workspace symbols" }
+      )
+      vim.keymap.set(
+        "n",
+        "gd",
+        current_buf_diagnostic,
+        { desc = "Go to document diagnostics" }
+      )
+      vim.keymap.set(
+        "n",
+        "gD",
+        telescopeBuiltin.diagnostics,
+        { desc = "Go to workspace diagnostics" }
       )
 
       -- Highlight references under cursor
