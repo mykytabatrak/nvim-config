@@ -16,17 +16,23 @@ local function config()
   telescope.load_extension("ui-select")
 
   local builtin = require("telescope.builtin")
+  local utils = require("telescope.utils")
 
   local function find_config_files()
     builtin.find_files({
       cwd = vim.fn.stdpath("config"),
     })
   end
-  local function find_open()
+  local function find_open_files()
     builtin.buffers({
       sort_lastused = true,
       sort_mru = true,
       show_all_buffers = false,
+    })
+  end
+  local function find_relative_files()
+    builtin.find_files({
+      cwd = utils.buffer_dir(),
     })
   end
 
@@ -34,15 +40,18 @@ local function config()
     vim.keymap.set("n", "<leader>" .. lhs, rhs, { desc = desc })
   end
 
-  set_keymap("ff", builtin.find_files, "[F]ind [F]iles")
   set_keymap("fc", find_config_files, "[F]ind [C]onfig")
   set_keymap("fh", builtin.help_tags, "[F]ind [H]elp")
   set_keymap("fk", builtin.keymaps, "[F]ind [K]eymaps")
   set_keymap("fw", builtin.live_grep, "[F]ind [W]ord")
-  set_keymap("fcw", builtin.grep_string, "[F]ind [C]urrent [W]ord")
+  set_keymap("fW", builtin.grep_string, "[F]ind current [W]ord")
   set_keymap("fd", builtin.diagnostics, "[F]ind [D]iagnostics")
-  set_keymap("fr", builtin.oldfiles, "[F]ind [R]ecent")
-  set_keymap("fo", find_open, "[F]ind [O]pen")
+
+  set_keymap("ffw", builtin.find_files, "[F]ind [F]iles in [W]orkspace")
+  set_keymap("ffo", find_open_files, "[F]ind [F]iles [O]pen")
+  set_keymap("ffp", builtin.oldfiles, "[F]ind [P]revious")
+  set_keymap("ffr", find_relative_files, "[F]ind [F]iles [R]elative")
+
   set_keymap("fgc", builtin.git_commits, "[F]ind [G]it [C]ommits")
   set_keymap("fgb", builtin.git_branches, "[F]ind [G]it [B]ranches")
   set_keymap("fgs", builtin.git_stash, "[F]ind [G]it [S]status")
