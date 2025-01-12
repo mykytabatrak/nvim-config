@@ -49,6 +49,7 @@ local function config()
 
   set_keymap("ffw", builtin.find_files, "[F]ind [F]iles in [W]orkspace")
   set_keymap("ffo", find_open_files, "[F]ind [F]iles [O]pen")
+  set_keymap("<Tab>", find_open_files, "[F]ind [F]iles [O]pen")
   set_keymap("ffp", builtin.oldfiles, "[F]ind [P]revious")
   set_keymap("ffr", find_relative_files, "[F]ind [F]iles [R]elative")
 
