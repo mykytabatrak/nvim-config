@@ -36,7 +36,7 @@ return {
     keys = {
       {
         "\\",
-        ":Neotree source=last<CR>",
+        ":Neotree reveal source=last<CR>",
         desc = "NeoTree reveal",
         silent = true,
       },
