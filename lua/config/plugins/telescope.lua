@@ -55,7 +55,7 @@ local function config()
 
   set_keymap("fgc", builtin.git_commits, "[F]ind [G]it [C]ommits")
   set_keymap("fgb", builtin.git_branches, "[F]ind [G]it [B]ranches")
-  set_keymap("fgs", builtin.git_stash, "[F]ind [G]it [S]status")
+  set_keymap("fgs", builtin.git_status, "[F]ind [G]it [S]status")
 end
 
 return {
