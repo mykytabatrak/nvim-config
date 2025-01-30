@@ -94,4 +94,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   callback = highlight_on_yank,
 })
 
+vim.diagnostic.config({
+  virtual_lines = true,
+})
+
 require("config.lazy")
