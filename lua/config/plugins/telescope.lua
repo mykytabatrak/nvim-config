@@ -3,7 +3,15 @@ local function config()
   local themes = require("telescope.themes")
 
   telescope.setup({
-    defaults = themes.get_ivy(),
+    defaults = themes.get_dropdown({
+      wrap_results = true,
+      layout_strategy = "vertical",
+      layout_config = {
+        height = 0.99,
+        width = 0.99,
+        prompt_position = "top",
+      },
+    }),
     extensions = {
       fzf = {},
       ["ui-select"] = {
