@@ -107,20 +107,12 @@ local function config()
 
   require("mason").setup()
   require("mason-lspconfig").setup({
-    ensure_installed = {},
-    automatic_installation = true,
+    ensure_installed = { "lua_ls", "ts_ls", "eslint", "typos_lsp" },
+    automatic_enable = true,
   })
   require("mason-tool-installer").setup({
     ensure_installed = { "stylua", "prettierd", "prettier" },
   })
-
-  local capabilities = require("blink.cmp").get_lsp_capabilities()
-  local lspconfig = require("lspconfig")
-
-  lspconfig.lua_ls.setup({ capabilities = capabilities })
-  lspconfig.ts_ls.setup({ capabilities = capabilities })
-  lspconfig.eslint.setup({ capabilities = capabilities })
-  lspconfig.typos_lsp.setup({ capabilities = capabilities })
 end
 
 return {

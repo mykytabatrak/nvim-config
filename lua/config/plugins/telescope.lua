@@ -64,6 +64,12 @@ local function config()
   set_keymap("fgc", builtin.git_commits, "[F]ind [G]it [C]ommits")
   set_keymap("fgb", builtin.git_branches, "[F]ind [G]it [B]ranches")
   set_keymap("fgs", builtin.git_status, "[F]ind [G]it [S]status")
+
+  set_keymap(
+    "fsw",
+    builtin.lsp_dynamic_workspace_symbols,
+    "[F]ind [S]ymbols [W]orkspace"
+  )
 end
 
 return {
