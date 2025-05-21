@@ -107,7 +107,13 @@ local function config()
 
   require("mason").setup()
   require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "ts_ls", "eslint", "typos_lsp" },
+    ensure_installed = {
+      "lua_ls",
+      "ts_ls",
+      "eslint",
+      "typos_lsp",
+      "tailwindcss",
+    },
     automatic_enable = true,
   })
   require("mason-tool-installer").setup({
