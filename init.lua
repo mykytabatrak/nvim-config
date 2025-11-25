@@ -85,6 +85,10 @@ vim.keymap.set(
   { desc = "[S]ource [S]election" }
 )
 
+-- Netrw
+vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 3
+
 local function highlight_on_yank()
   vim.highlight.on_yank({ timeout = 1000 })
 end

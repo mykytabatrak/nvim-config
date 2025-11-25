@@ -106,18 +106,19 @@ local function config()
   })
 
   require("mason").setup()
-  require("mason-lspconfig").setup({
+  require("mason-lspconfig").setup()
+  require("mason-tool-installer").setup({
     ensure_installed = {
       "lua_ls",
       "ts_ls",
       "eslint",
       "typos_lsp",
       "tailwindcss",
+      "biome",
+      "stylua",
+      "prettierd",
+      "prettier",
     },
-    automatic_enable = true,
-  })
-  require("mason-tool-installer").setup({
-    ensure_installed = { "stylua", "prettierd", "prettier" },
   })
 end
 
