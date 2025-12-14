@@ -18,6 +18,22 @@ local function config()
     window = { suffix = "" },
     yank = { suffix = "" },
   })
+
+  MiniFiles = require("mini.files")
+  MiniFiles.setup()
+
+  local minifiles_toggle = function()
+    if not MiniFiles.close() then
+      MiniFiles.open(vim.api.nvim_buf_get_name(0))
+    end
+  end
+
+  vim.keymap.set(
+    "n",
+    "<leader>fe",
+    minifiles_toggle,
+    { desc = "Open [F]ile [E]xplorer" }
+  )
 end
 
 return {
