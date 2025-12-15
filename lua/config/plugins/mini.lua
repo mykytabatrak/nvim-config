@@ -32,7 +32,7 @@ local function config()
     "n",
     "<leader>fe",
     minifiles_toggle,
-    { desc = "Open [F]ile [E]xplorer" }
+    { desc = "[F]ile [E]xplorer" }
   )
 end
 

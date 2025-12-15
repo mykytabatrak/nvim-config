@@ -109,6 +109,10 @@ local function config()
   require("mason-lspconfig").setup()
   require("mason-tool-installer").setup({
     ensure_installed = {
+      "gopls",
+      "protols",
+      "angularls",
+      "html",
       "lua_ls",
       "ts_ls",
       "eslint",
@@ -118,6 +122,7 @@ local function config()
       "stylua",
       "prettierd",
       "prettier",
+      "emmet_language_server",
     },
   })
 end
