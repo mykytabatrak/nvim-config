@@ -23,7 +23,7 @@ local function config()
   local function format()
     require("conform").format({ async = true })
   end
-  vim.keymap.set("n", "<leader>fb", format, { desc = "[F]ormat [B]uffer" })
+  vim.keymap.set("n", "<leader>fb", format, { desc = "Conform: Format buffer" })
 end
 
 return {

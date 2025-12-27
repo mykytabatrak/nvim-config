@@ -14,55 +14,55 @@ local function config()
         "n",
         "grd",
         telescopeBuiltin.lsp_definitions,
-        { desc = "Go to [D]efinition" }
+        { desc = "LSP: Go to definitions" }
       )
       vim.keymap.set(
         "n",
         "grD",
         vim.lsp.buf.declaration,
-        { desc = "Go to [D]eclaration" }
+        { desc = "LSP: GO to declaration" }
       )
       vim.keymap.set(
         "n",
         "grr",
         telescopeBuiltin.lsp_references,
-        { desc = "Go to [R]eference" }
+        { desc = "LSP: Go to references" }
       )
       vim.keymap.set(
         "n",
         "gri",
         telescopeBuiltin.lsp_implementations,
-        { desc = "Go to [I]mplementation" }
+        { desc = "LSP: Go to implementations" }
       )
       vim.keymap.set(
         "n",
         "grt",
         telescopeBuiltin.lsp_type_definitions,
-        { desc = "Go to [T]ype definition" }
+        { desc = "LSP: Go to type definitions" }
       )
       vim.keymap.set(
         "n",
         "go",
         telescopeBuiltin.lsp_document_symbols,
-        { desc = "Go to document symbols" }
+        { desc = "LSP: Go to document symbols" }
       )
       vim.keymap.set(
         "n",
         "gO",
         telescopeBuiltin.lsp_dynamic_workspace_symbols,
-        { desc = "Go to workspace symbols" }
+        { desc = "LSP: Go to workspace symbols" }
       )
       vim.keymap.set(
         "n",
         "gd",
         current_buf_diagnostic,
-        { desc = "Go to document diagnostics" }
+        { desc = "LSP: Find diagonsitcs in cureent buffer" }
       )
       vim.keymap.set(
         "n",
         "gD",
         telescopeBuiltin.diagnostics,
-        { desc = "Go to workspace diagnostics" }
+        { desc = "LSP: Find diagnostics in workspace" }
       )
 
       -- Highlight references under cursor
