@@ -12,10 +12,22 @@ local function config()
   })
 end
 
+local function context_config()
+  local context = require("treesitter-context")
+
+  context.setup({
+    max_lines = 3,
+  })
+end
+
 return {
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = config,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    config = context_config,
   },
 }

@@ -109,6 +109,7 @@ local function config()
   require("mason-lspconfig").setup()
   require("mason-tool-installer").setup({
     ensure_installed = {
+      "cssls",
       "gopls",
       "protols",
       "angularls",

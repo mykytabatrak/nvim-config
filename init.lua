@@ -65,24 +65,30 @@ vim.opt.scrolloff = 10
 -- Clear search highlighting
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+-- Disable text wrap
+vim.opt.wrap = false
+
+-- Display vertical ruler
+vim.opt.colorcolumn = "80"
+
 -- Source file or line(s)
 vim.keymap.set(
   "n",
   "<leader><leader>sf",
   "<cmd>source %<CR>",
-  { desc = "[S]ource [F]ile" }
+  { desc = "VIM: Source File" }
 )
 vim.keymap.set(
   "n",
   "<leader><leader>sl",
   ":.lua<CR>",
-  { desc = "[S]ource [L]ine" }
+  { desc = "VIM: Source Line" }
 )
 vim.keymap.set(
   "v",
   "<leader><leader>ss",
   ":lua<CR>",
-  { desc = "[S]ource [S]election" }
+  { desc = "VIM: Source Selection" }
 )
 
 -- Netrw
